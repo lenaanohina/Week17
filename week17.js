@@ -2,7 +2,16 @@
 // Создайте класс Worker. Класс должен содержать свойства name, surname. Создайте на его основе объект worker. Выведите в консоль созданный объект.
 // Подсказка: имена классов пишем с большой буквы
 
-//Ваш код
+class Worker {
+  constructor(name, surname) {
+    this.name = name;
+    this.surname = surname;
+  }
+
+  fullName() {
+    return `${this.surname}, ${this.name}`;
+  }
+} //Ваш код
 
 //Создаём объекта на основе класса Worker
 const worker = new Worker("Имя", "Фамилия");
@@ -12,8 +21,6 @@ console.log(worker);
 //Задание 2
 //Добавьте в класс Worker метод fullName, который будет возвращать полное имя работника в формате "Фамилия, Имя". Создайте объект worker2 на основе класса Worker и выведите его полное имя в консоль с помощью метода fullName
 
-//Ваш код
-
 //Создаём объект worker2 на основе класса Worker
 const worker2 = new Worker("Имя", "Фамилия");
 //Выводим полное имя объекта worker2 в консоль с помощью метода fullName
@@ -22,12 +29,27 @@ console.log(worker2.fullName());
 //Задание 3
 //Создайте класс Car. Класс должен содержать свойства brand, model и year. Создайте на его основе объект car и выведите его свойства в консоль.
 
-//Ваш код
+class Car {
+  constructor(brand, model, year) {
+    this.brand = brand;
+    this.model = model;
+    this.year = year;
+  }
+
+  getAge() {
+    const currentYear = new Date().getFullYear();
+    return currentYear - this.year;
+  }
+}
+
+const car = new Car("Brand", "Model", 2015);
+
+console.log(car.brand);
+console.log(car.model);
+console.log(car.year);
 
 //Задание 4
 //Добавьте в класс Car метод getAge, который будет возвращать возраст машины (текущий год минус год выпуска). Создайте объект car2 на основе класса Car и выведите его возраст в консоль с помощью метода getAge.
-
-//Ваш код
 
 //Создаём объект car2 на основе класса Car
 const car2 = new Car("Brand", "Model", 2010);
@@ -37,71 +59,140 @@ console.log(car2.getAge());
 //Задание 5
 //Создайте класс Rectangle. Класс должен содержать свойства width и height. Создайте на его основе объект rectangle и выведите его свойства в консоль.
 
-//Ваш код
+class Rectangle {
+  constructor(width, height) {
+    this.width = width;
+    this.height = height;
+  }
+
+  getArea() {
+    return this.width * this.height;
+  }
+}
+
+const rectangle = new Rectangle(10, 20);
+console.log(rectangle.width);
+console.log(rectangle.height);
 
 //Задание 6
 //Добавьте в класс Rectangle метод getArea, который будет возвращать площадь прямоугольника (произведение ширины и высоты). Создайте объект rectangle2 на основе класса Rectangle и выведите его площадь в консоль с помощью метода getArea.
 
-//Ваш код
+const rectangle2 = new Rectangle(15, 25);
+console.log(rectangle2.getArea());
 
 //Задание 7
 //Создайте класс Circle. Класс должен содержать свойство radius. Создайте на его основе объект circle и выведите его свойство в консоль.
 
-//Ваш код
+class Circle {
+  constructor(radius) {
+    this.radius = radius;
+  }
+  calculateArea() {
+    return this.radius * this.radius * 3.14;
+  }
+}
 
+const circle = new Circle(5);
+console.log(circle.radius);
 //Задание 8
 //Добавьте в класс Circle метод calculateArea, который будет вычислять и возвращать площадь круга. Формула для расчета площади круга: площадь = радиус * радиус * 3.14. Создайте объект circle2 на основе класса Circle с радиусом 3 и выведите его площадь круга в консоль с помощью метода calculateArea.
 
-//Ваш код
+const circle2 = new Circle(3);
+console.log(circle2.calculateArea());
 
 //Задание 9
 //Создайте класс Student. Класс должен содержать свойства name, age и grade. Создайте на его основе объект student и выведите его свойства в консоль.
 
-//Ваш код
+class Student {
+  constructor(name, age, grade) {
+    this.nane = name;
+    this.age = age;
+    this.grade = grade;
+  }
+  increaseGrade() {
+    this.grade++;
+  }
+}
+
+const student = new Student("Имя", 18, 80);
+console.log(student);
 
 //Задание 10
 //Добавьте в класс Student метод increaseGrade, который будет увеличивать текущую оценку на 1. Создайте объект student2 на основе класса Student, увеличьте его оценку с помощью метода increaseGrade и выведите новую оценку в консоль.
 
-//Ваш код
+const student2 = new Student("Имя 2", 17, 90);
+student2.increaseGrade();
+console.log(student2.grade);
 
 //Задание 11
 //Создайте класс Book. Класс должен содержать свойства title, author и year. Создайте на его основе объект book и выведите его свойства в консоль.
 
-//Ваш код
+class Book {
+  constructor(title, author, year) {
+    this.title = title;
+    this.author = author;
+    this.year = year;
+  }
+
+  getTitleAndAuthor() {
+    return `${this.title} - ${this.author}`;
+  }
+}
+
+const book = new Book("Название книги", "Автор", 2022);
+console.log(book);
 
 //Задание 12
 //Добавьте в класс Book метод getTitleAndAuthor, который будет возвращать строку в формате "Название книги - Автор". Создайте объект book2 на основе класса Book и выведите его название и автора в консоль с помощью метода getTitleAndAuthor.
 
-//Ваш код
+const book2 = new Book("Название книги 2", "Автор 2", 2023);
+console.log(book2.getTitleAndAuthor());
 
 //Задание 13
 //Создайте класс BankAccount. Класс должен содержать свойства accountNumber и balance. Создайте на его основе объект account и выведите его свойства в консоль.
 
-//Ваш код
+class BankAccount {
+  constructor(accountNumber, balance) {
+    this.accountNumber = accountNumber;
+    this.balance = balance;
+  }
+
+  deposit(amount) {
+    this.balance += amount;
+  }
+}
+
+const account = new BankAccount("Аккаунт", 1000);
+console.log(account);
 
 //Задание 14
 //Добавьте в класс BankAccount метод deposit, который будет увеличивать баланс на заданную сумму. Создайте объект account2 на основе класса BankAccount, пополните его баланс с помощью метода deposit и выведите новый баланс в консоль.
 
-//Ваш код
+const account2 = new BankAccount("Аккаунт 2", 500);
+account2.deposit(200);
+console.log(account2.balance);
 
 //Задание 15
 //В класс BankAccount добавлен метод withdraw, который уменьшает баланс на заданную сумму. Если запрошенная сумма превышает текущий баланс, выведите сообщение "Недостаточно средств". Создайте объект account3 на основе класса BankAccount, попробуйте снять с него сумму, превышающую баланс, и выведите соответствующее сообщение в консоль.
 
-class BankAccount {
+class BankAccount2 {
   constructor(balance) {
     this.balance = balance;
   }
 
   withdraw(amount) {
     if (amount <= this.balance) {
-      //Уменьшите баланс на заданную сумму
+      this.balance -= amount;
     } else {
-      //Выводите в консоль сообщение
+      console.log("Недостаточно средств");
     }
   }
 }
 //Создайте объект account3 на основе класса BankAccount
+const account3 = new BankAccount2(1000);
 //Попытайтесь снять сумму, превышающую баланс
+const withdrawalAmount = 1500;
+account3.withdraw(withdrawalAmount);
 
 //Задание 16
 //Создайте класс Animal. Класс должен содержать свойства name и sound. Создайте на его основе объект animal и выведите его свойства в консоль.
